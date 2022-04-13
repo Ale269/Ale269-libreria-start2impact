@@ -155,6 +155,7 @@ let DomControll = (() => {
         DisplayResult.loading();
 
         let field = domElement.inputField.value;
+        field = field.toLowerCase();
         field = field.replace(/\s/g, '');
         GetBook.getList(`https://openlibrary.org/subjects/${field}.json`);
         domElement.inputField.value = null;
