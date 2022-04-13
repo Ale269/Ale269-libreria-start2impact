@@ -215,10 +215,13 @@ body .library-container .book-container h5 {
 }
 
 @media screen and (max-width: 1100px) {
-  .navigation {
+  body .remove-image {
+    display: none;
+  }
+  body .navigation {
     padding: 0 30px 0 30px;
   }
-  .container {
+  body .container {
     padding: 0 30px 0 30px;
   }
 }
@@ -227,6 +230,9 @@ body .library-container .book-container h5 {
   body .background-image {
     display: block;
     width: 100%;
+  }
+  body .remove-image {
+    display: none;
   }
   body .selector-container .logo {
     width: 10%;
@@ -259,6 +265,9 @@ body .library-container .book-container h5 {
 }
 
 @media screen and (max-width: 350px) {
+  body .remove-image {
+    display: none;
+  }
   body .selector-container .logo {
     width: 10%;
   }

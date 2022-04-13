@@ -17,7 +17,7 @@ body {
     }
 
     .remove-image {
-        display: none
+        display: none;
     }
 
     .navigation {
@@ -190,13 +190,22 @@ body {
 
 
 @media screen and (max-width: 1100px) {
-    .navigation {
-        padding: 0 30px 0 30px;
-    }
 
-    .container {
-        padding: 0 30px 0 30px;
+    body {
+
+        .remove-image {
+            display: none;
+        }
+
+        .navigation {
+            padding: 0 30px 0 30px;
+        }
+    
+        .container {
+            padding: 0 30px 0 30px;
+        }
     }
+    
 }
 
 
@@ -207,6 +216,10 @@ body {
         .background-image {
             display: block;
             width: 100%;
+        }
+
+        .remove-image {
+            display: none;
         }
 
         .selector-container {
@@ -248,6 +261,12 @@ body {
 
 @media screen and (max-width: 350px) {
     body {
+
+        .remove-image {
+            display: none;
+        }
+
+        
         .selector-container {
             .logo {
                 width: 10%;
