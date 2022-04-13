@@ -236,6 +236,9 @@ body {
             form  {
                 width: 90%;
                 justify-content: end;
+                -webkit-justify-content: flex-end;
+                align-items: flex-end;
+                -webkit-align-items: flex-end;
 
                 .form-container {
                     margin: 0;
@@ -266,7 +269,7 @@ body {
             display: none;
         }
 
-        
+
         .selector-container {
             .logo {
                 width: 10%;
