@@ -248,10 +248,6 @@ body .library-container .book-container h5 {
         -ms-flex-pack: end;
             justify-content: end;
     -webkit-justify-content: flex-end;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    -webkit-align-items: flex-end;
   }
   body .selector-container form .form-container {
     margin: 0;
