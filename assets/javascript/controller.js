@@ -38,7 +38,7 @@ let DomControll = (() => {
             GetBook.getDescription(`https://openlibrary.org${key}.json`).then((result) => {DisplayResult.displayDescription(result)});
             
         }
-        else if(event.target == undefined || event.target.classList.contains("library-container") ){
+        else if(event.target == undefined || event.target.classList.contains("library-container") || event.target.classList.contains("alert") || event.target.classList.contains("suggestion")){
             return;
         }else{
             let key = event.target.parentNode.dataset.book;

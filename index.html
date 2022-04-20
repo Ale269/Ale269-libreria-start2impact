@@ -6,23 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style/style.css">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/2ef2a7fb14.js" crossorigin="anonymous"></script>
+
+    <link rel="icon" type="image/x-icon" href="./assets/image/favicon.png">
+
     <title>Document</title>
 </head>
-<body>    
-
-    <header>
-        <div class="header-container">
-            <h1>City life quality</h1>
+<body>
+    <div class="navigation">
+        <div class="selector-container">
+            <div class="logo">
+                <img src="./assets/image/favicon.png">
+            </div>
+            <form>
+                <div class="form-container">
+                    <input type="text" name="libro" id="libro" placeholder="Select a category">
+                    <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+            </form>
+            <div class="spacing">
+            </div>
         </div>
-    </header>
-
-    <div class="input-container">
-        <input type="text" name="search-for-city" id="search-for-city" placeholder="Shanghai">
-        <button type="submit" id="button">Search for city</button>
+    </div>
+    <div class="container">
+        <div class="container-for-description-element">
+            <img class="background-image" src="./assets/image/background-image.svg">
+        </div>
+        <div class="library-container"></div>
     </div>
 
-
-    <script src="assets/src/api.js"></script>
-    <script src="assets/src/main.js"></script>
+    <script type="module" src="assets/javascript/controller.js"></script>
 </body>
 </html>

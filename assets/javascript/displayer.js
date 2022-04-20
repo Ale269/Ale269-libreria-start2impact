@@ -14,8 +14,9 @@ export default class DisplayResult {
     static displayBooks = function (arrayResult) {
 
         DisplayResult.clearPage();
+        console.log(arrayResult);
 
-        if(arrayResult.length === 0){
+        if(arrayResult === "error" || arrayResult.length === 0){
 
             let div = document.createElement("div");
             domElement.libraryContainer.append(div);
@@ -30,6 +31,8 @@ export default class DisplayResult {
 
             div.append(alert);
             alert.after(suggestion);
+
+            return;
         }
 
         for(let i=0; i<arrayResult.length; i++){
