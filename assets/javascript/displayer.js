@@ -1,26 +1,6 @@
-class GetBook {
-    static getList = async function(url) {
-        return fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            return data.works;
-        })
-    };
+import domElement from "./domElement.js";
 
-    static getDescription = async function(url) {
-        return fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            if(typeof data.description == "object" || data.description == undefined){
-                return "Description is not available for this book";
-            }
-            return data.description;
-        })
-    }
-};
-
-
-class DisplayResult {
+export default class DisplayResult {
 
     body = document.querySelector("body");
     libraryContainer = document.querySelector(".library-container");
@@ -128,66 +108,4 @@ class DisplayResult {
         domElement.getImage();
         domElement.image.setAttribute("class", "background-image");
     }
-}
-
-
-let domElement = {
-    body: document.querySelector("body"),
-    libraryContainer: document.querySelector(".library-container"),
-    inputField: document.getElementById("libro"),
-    searchBtn: document.querySelector("button"),
-    form: document.querySelector("form"),
-    logo: document.querySelector(".logo"),
-    container: document.querySelector(".container-for-description-element"),
-    image: document.querySelector(".background-image"),
-    getImage(){domElement.image = document.querySelector(".background-image")},
-}
-
-
-let DomControll = (() => {
-
-    domElement.libraryContainer.addEventListener("click", callApi);
-    domElement.searchBtn.addEventListener("click", searchCategory);
-    document.onkeydown = function (e) {
-        if(domElement.inputField.value == ""){return};
-        if(e.key === "Enter"){
-            searchCategory();
-        }
-    }
-    domElement.form.addEventListener("submit", (e) => {e.preventDefault()});
-    domElement.logo.addEventListener("click", () => {
-        DisplayResult.clearPage();
-        DisplayResult.addImage();
-    });
-    document.addEventListener("click", (event) => {DisplayResult.resetDescription(event)});
-
-    function searchCategory() {
-        DisplayResult.removeImage();
-        DisplayResult.clearPage();
-        DisplayResult.loading();
-
-        let field = domElement.inputField.value;
-        field = field.toLowerCase();
-        field = field.replace(/\s/g, '');
-        GetBook.getList(`https://openlibrary.org/subjects/${field}.json`).then((data) => {DisplayResult.displayBooks(data);});  
-        domElement.inputField.value = null;
-    }
-
-    function callApi(event) {
-        if(event.target.classList.contains("book-container")){
-            let key = event.target.dataset.book;
-            GetBook.getDescription(`https://openlibrary.org${key}.json`).then((result) => {DisplayResult.displayDescription(result)});
-            
-        }
-        else if(event.target == undefined || event.target.classList.contains("library-container") ){
-            return;
-        }else{
-            let key = event.target.parentNode.dataset.book;
-            GetBook.getDescription(`https://openlibrary.org${key}.json`).then((result) => {DisplayResult.displayDescription(result)});
-        }
-    }
-
-    return {
-        domElement,
-    }
-})();
+};
