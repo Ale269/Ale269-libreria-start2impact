@@ -5,7 +5,6 @@ export default class DisplayResult {
     static displayBooks = function (arrayResult) {
 
         DisplayResult.clearPage();
-        console.log(arrayResult);
 
         if(arrayResult === "error" || arrayResult.length === 0){
 
@@ -82,7 +81,7 @@ export default class DisplayResult {
 
     static resetDescription = function(event) {
         if(event.target.classList.contains("cover")){
-            domElement.container.innerHTML = '<img class="background-image remove-image" src="./assets/image/background-image.svg">';
+            domElement.container.innerHTML = '<img class="background-image remove-image" src="./img/background-image.svg">';
             domElement.body.classList.remove("block"); 
         }else{return};
         
