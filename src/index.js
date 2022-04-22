@@ -1,9 +1,22 @@
 import domElement from "./domElement.js";
 import DisplayResult from "./displayer.js";
+import style from "./style/style.css";
 import GetBook from "./api.js";
+import favicon from "./img/favicon.png";
 
 
 let DomControll = (() => {
+
+    const linkFavicon = document.createElement("link");
+    linkFavicon.type = "image/x-icon";
+    linkFavicon.rel = "icon";
+    linkFavicon.href = favicon;
+    document.head.appendChild(linkFavicon);
+
+    const linkStyle = document.createElement("link");
+    linkStyle.rel = "stylesheet";
+    linkStyle.href = style;
+    document.head.appendChild(linkStyle);
 
     domElement.libraryContainer.addEventListener("click", callApi);
     domElement.searchBtn.addEventListener("click", searchCategory);

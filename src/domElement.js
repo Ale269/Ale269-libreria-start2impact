@@ -1,3 +1,5 @@
+import image from "./img/background-image.svg";
+
 let domElement = {
     body: document.querySelector("body"),
     libraryContainer: document.querySelector(".library-container"),
