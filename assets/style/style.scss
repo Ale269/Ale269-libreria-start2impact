@@ -124,7 +124,18 @@ body {
         opacity: 0.8;
     }
 
+    .Open-library-link {
+        color: #EA610E;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .Open-library-link:hover {
+        border-bottom: 1px solid #EA610E;
+    }
+
     .book-description-container{
+        width: 400px;
         position: fixed;
         top: 50%;
         left: 50%;
@@ -187,6 +198,21 @@ body {
                 margin-bottom: 3px;
             }
         }
+
+        .book-container:hover {
+            background-color: #EA610E;
+            transition: ease-in-out 0.2s;
+
+            h3 {
+                color: #232323;
+                transition: ease-in 0.2s;
+            }
+
+            h5 {
+                color: #fcfcfc;
+                transition: ease-in 0.2s;
+            }
+        }
     }
 }
 
@@ -194,6 +220,10 @@ body {
 @media screen and (max-width: 1100px) {
 
     body {
+
+        .book-description-container {
+            width: 350px;
+        }
 
         .remove-image {
             display: none;
@@ -226,7 +256,7 @@ body {
 
         .selector-container {
             .logo {
-                width: 10%;
+                width: 20%;
         
                 img {
                     width: 60px;
@@ -236,7 +266,7 @@ body {
             }
         
             form  {
-                width: 90%;
+                width: 80%;
                 justify-content: end;
                 -webkit-justify-content: flex-end;
 
@@ -265,14 +295,22 @@ body {
 @media screen and (max-width: 350px) {
     body {
 
+        .library-container {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
         .remove-image {
             display: none;
+        }
+
+        .book-description-container {
+            width: 230px;
         }
 
 
         .selector-container {
             .logo {
-                width: 10%;
+                width: 30%;
         
                 img {
                     width: 60px;
@@ -282,7 +320,7 @@ body {
             }
         
             form  {
-                width: 90%;
+                width: 70%;
                 justify-content: end;
 
                 .form-container {

@@ -2,15 +2,6 @@ import domElement from "./domElement.js";
 
 export default class DisplayResult {
 
-    body = document.querySelector("body");
-    libraryContainer = document.querySelector(".library-container");
-    inputField = document.getElementById("libro");
-    searchBtn = document.querySelector("button");
-    form =  document.querySelector("form");
-    logo =  document.querySelector(".logo");
-    container = document.querySelector(".container-for-description-element");
-    image = document.querySelector(".background-image");
-
     static displayBooks = function (arrayResult) {
 
         DisplayResult.clearPage();
@@ -74,8 +65,14 @@ export default class DisplayResult {
         let descriptionTitle = document.createElement("h3");
         descriptionTitle.textContent = "Description";
         let description = document.createElement("p");
-        description.textContent = bookDescription;
 
+        if(bookDescription.length <= 1300){
+            description.textContent = bookDescription;
+        }else{
+            const newDescritpion = bookDescription.substring(0, 1300);
+            description.innerHTML = newDescritpion + "..." + '<a target="_blank" class="Open-library-link" href="https://openlibrary.org/">(read more on Open Library).</a>'
+        }
+    
         domElement.container.prepend(cover);
         domElement.body.classList.add("block");
         cover.before(descriptionContainer);
