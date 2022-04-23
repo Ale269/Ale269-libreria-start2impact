@@ -1,23 +1,31 @@
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/index.js',
-  output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
-        type: 'asset/resource'
-     }
+    entry: {
+        index: "./src/javascript/index.js"
+    },
+    output: {
+        path: path.resolve(__dirname, "dist"),
+        filename: "bundle.js" 
+    },
+    plugins:  [
+        new HtmlWebpackPlugin({
+            title: "Libreria || Progetto Start2impact",
+            template: './src/index.html'
+        })
     ],
-  },
-  
-
-};
+    module: {
+        rules: [
+            {
+                test: /\.(css|s[ac]ss)$/i,
+                use: ["style-loader", "css-loader", "sass-loader"]
+            }
+        ]
+    },
+    devServer: {
+        static: path.resolve(__dirname, "dist"),
+        open: true
+    },
+    mode: "development"
+}

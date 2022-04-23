@@ -1,6 +1,7 @@
 import domElement from "./domElement.js";
 import DisplayResult from "./displayer.js";
 import GetBook from "./api.js";
+import "../style/style.scss";
 
 
 let DomControll = (() => {
