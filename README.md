@@ -1,6 +1,8 @@
 # Library project
 
-![Project Image](https://raw.githubusercontent.com/Ale269/Ale269-libreria-start2impact/40e70c98a6097a5f74658489ae921cd79d4ba56e/dist/img/background-image.svg)
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Ale269/Ale269-libreria-start2impact/40e70c98a6097a5f74658489ae921cd79d4ba56e/dist/img/background-image.svg" style="width: 500px;"/>
+</p>
 
 > Creating an app that encourages reading books.
 
@@ -37,7 +39,6 @@ It displays the results and allows you to get the description of these books via
 
 ## How To Use
 
-<a href="https://ale269.github.io/Ale269-libreria-start2impact/" target="_blank">Visit the website</a><br />
 [Visit the website](https://ale269.github.io/Ale269-libreria-start2impact/).<br />
 Enter a category of books and you will get the results shown on the display.<br />
 Click on one of the results to search for the description, this will in turn be shown on the display.<br />
