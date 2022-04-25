@@ -29,21 +29,21 @@ let DomControll = (() => {
         let field = domElement.inputField.value;
         field = field.toLowerCase();
         field = field.replace(/\s/g, '');
-        GetBook.getList(`https://openlibrary.org/subjects/${field}.json`).then((data) => {DisplayResult.displayBooks(data);});  
+        GetBook.getList(`${process.env.GET_API}${field}.json`).then((data) => {DisplayResult.displayBooks(data);});  
         domElement.inputField.value = null;
     }
 
     function callApi(event) {
         if(event.target.classList.contains("book-container")){
             let key = event.target.dataset.book;
-            GetBook.getDescription(`https://openlibrary.org${key}.json`).then((result) => {DisplayResult.displayDescription(result)});
+            GetBook.getDescription(`${process.env.DESCRIPTION_API}${key}.json`).then((result) => {DisplayResult.displayDescription(result)});
             
         }
         else if(event.target == undefined || event.target.classList.contains("library-container") || event.target.classList.contains("alert") || event.target.classList.contains("suggestion")){
             return;
         }else{
             let key = event.target.parentNode.dataset.book;
-            GetBook.getDescription(`https://openlibrary.org${key}.json`).then((result) => {DisplayResult.displayDescription(result)});
+            GetBook.getDescription(`${process.env.DESCRIPTION_API}${key}.json`).then((result) => {DisplayResult.displayDescription(result)});
         }
     }
 
